@@ -875,6 +875,11 @@
   resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.26.4.tgz#c40a7286d1e816a1e267504cc2294adb00afac40"
   integrity sha512-p3hdV/feuj4Shfg5sBpZAdEuUb8b+aBAFs13rd2oxBMPTCWZRG+XyjJSjiLuYBVfYCxbG46vhzYQYZ4dfDt9tA==
 
+"@unocss/core@0.30.6":
+  version "0.30.6"
+  resolved "https://registry.npmmirror.com/@unocss/core/-/core-0.30.6.tgz#c5f16372ca544343d8af04e7430b196b1ae3f909"
+  integrity sha512-hN/W1xmAsKdXOOpQ37YdAwHTz5+w4yhi6HA7FbkxrxBWy/EhcnxIgrZ/EbdtsSBQZ+Jf8vD1CGVkjQmU4ax0jQ==
+
 "@unocss/inspector@0.26.4":
   version "0.26.4"
   resolved "https://registry.npmmirror.com/@unocss/inspector/-/inspector-0.26.4.tgz#77af3f04bc8cde264baf2a32e3bd59e1e5f9498f"
@@ -883,12 +888,19 @@
     gzip-size "^6.0.0"
     sirv "^2.0.2"
 
-"@unocss/preset-attributify@0.26.4", "@unocss/preset-attributify@^0.26.2":
+"@unocss/preset-attributify@0.26.4":
   version "0.26.4"
   resolved "https://registry.npmmirror.com/@unocss/preset-attributify/-/preset-attributify-0.26.4.tgz#15958541205982bb1b765abe0f62230fcc1f041f"
   integrity sha512-0f9w+3DnacBynVCO9aHnHw1rSbVD23pUJRRCM7VmXhb4/LnR/VkrOF3lfW8UsTxubUYBolsi7IMssohFMVWT7g==
   dependencies:
     "@unocss/core" "0.26.4"
+
+"@unocss/preset-attributify@^0.30.6":
+  version "0.30.6"
+  resolved "https://registry.npmmirror.com/@unocss/preset-attributify/-/preset-attributify-0.30.6.tgz#25dcea54fb9a9a68330f455950a16fc18fee0f51"
+  integrity sha512-ZhcS7D9CJajYiXi2F9Xbtib8qqEhK9PAJ9fru0Ip8QduYI/qt7GCfD3l2+y8SRv48vFX/soE9KB0xdASOBMXIQ==
+  dependencies:
+    "@unocss/core" "0.30.6"
 
 "@unocss/preset-icons@0.26.4", "@unocss/preset-icons@^0.26.2":
   version "0.26.4"

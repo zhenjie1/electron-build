@@ -141,10 +141,10 @@ export default class Parse {
 				return notSend(`价格不符，最大价格: ${maxPrice}, 当前价格： ${price}`)
 			}
 			if (minReviews && ratings < minReviews) {
-				return notSend(`评不符，最小评分: ${minReviews}, 当前评分： ${ratings}`)
+				return notSend(`评论不符，最小评论: ${minReviews}, 当前评论： ${ratings}`)
 			}
 			if (maxReviews && ratings > maxReviews) {
-				return notSend(`评分不符，最小评分: ${maxReviews}, 当前评分： ${ratings}`)
+				return notSend(`评论不符，最小评论: ${maxReviews}, 当前评论： ${ratings}`)
 			}
 
 			// 无库存
@@ -433,7 +433,9 @@ export default class Parse {
 		}
 
 		// 设置地址
-		await entryPageSetAddress(page, this.task, { curPage })
+		await entryPageSetAddress(page, this.task, { curPage }).catch((error) => {
+			console.log('设置地址失败1', error)
+		})
 
 		// 获取 asin 列表并执行回调
 		const asinList = (await getAsinHref(page, this.task)) || []

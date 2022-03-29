@@ -108,10 +108,8 @@ export const detailParse = async ({
 		},
 		ratings: {
 			default: ({ val = '' }) => {
-				const ratingsMatch = val.match(/(\d|,)+/)
-				let ratings = ratingsMatch ? ratingsMatch[0] : ''
-
-				ratings = ratings ? ratings.replace(',', '') : ratings
+				if (!val) return 0
+				let ratings = val.replace(/[^\d]/g, '')
 				return Number(ratings)
 			},
 		},
@@ -128,7 +126,7 @@ export const detailParse = async ({
 		},
 		rank: {
 			default: ({ val, select, id }) => {
-				// console.log('rank ------------->', {select, id})
+				console.log('rank ------------->', {select, id})
 				return handles.rank.dealWith({ val } as any)
 			},
 			dealWith({ val }) {
@@ -250,6 +248,7 @@ export const detailParse = async ({
 				return handles.rank.dataWith(ranks)
 			},
 			8({}) {
+				console.log('88888888')
 				const $desMeilleures = $html.find(
 					'th.a-color-secondary.a-size-base.prodDetSectionEntry'
 				)
@@ -272,6 +271,13 @@ export const detailParse = async ({
 					.text()
 
 				return handles.rank.dealWith({ val: defaultRank } as any)
+			},
+			9({ $el }) {
+				if ($el.prev().text().includes('Producto')) return ''
+				if ($el.prev().text().includes('Date de mise en ligne')) return ''
+				if ($el.prev().text().includes('Disponibile')) return ''
+				console.log('9999999999',$el.html())
+				return handles.rank['2']({ $el })
 			},
 			12({ $el }) {
 				const smallList = $el
@@ -317,6 +323,27 @@ export const detailParse = async ({
 				return handles.rank.dataWith(ranks)
 			},
 			16({ $el }) {
+				const ranksHtml = $el.next().html()
+				const $$ = cheerio.load(ranksHtml)
+				const ranks = $$('span')
+					.toArray()
+					.map((span) => {
+						const el = cheerio.load(span)
+						if (el.text().includes('(')) {
+							return {
+								text: el.text().split('(')[0],
+								link: el('a').attr('href'),
+							}
+						} else {
+							return {
+								text: el.text(),
+								link: el('a').attr('href'),
+							}
+						}
+					})
+				return handles.rank.dataWith(ranks)
+			},
+			17({ $el }) {
 				const ranksHtml = $el.next().html()
 				const $$ = cheerio.load(ranksHtml)
 				const ranks = $$('span')

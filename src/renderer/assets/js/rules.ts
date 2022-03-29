@@ -265,11 +265,6 @@ const rules = {
 			id: 14,
 		},
 		{
-			select: 'th:contains(los clientes) + *',
-			type: 'text',
-			id: 13,
-		},
-		{
 			select: 'th:contains(Posizione nella classifica Bestseller di Amazon) + *',
 			type: 'text',
 			id: 1,
@@ -283,6 +278,11 @@ const rules = {
 			select: 'li:contains(Clasificación en los más vendidos de Amazon)',
 			type: 'text',
 			id: 3,
+		},
+		{
+			select: 'th:contains(Clasificación en los más vendidos de Amazon)',
+			type: 'text',
+			id: 17,
 		},
 		{
 			select: 'th:contains(Amazon Bestseller-Rang) + *',
@@ -315,15 +315,16 @@ const rules = {
 			id: 16,
 		},
 		{
-			select: '#productDetails_db_sections #productDetails_detailBullets_sections1',
-			type: 'text',
-			id: 8,
-		},
-		{
 			select: '#productDetails_detailBullets_sections1 th:contains("Amazon") + *',
 			type: 'text',
 			id: 9,
 		},
+		{
+			select: '#productDetails_db_sections #productDetails_detailBullets_sections1',
+			type: 'text',
+			id: 8,
+		},
+		
 		{
 			select: '#detailBullets #detailBulletsWrapper_feature_div >ul >li:eq(0)',
 			type: 'text',
@@ -338,6 +339,11 @@ const rules = {
 			select: '#detailBulletsWrapper_feature_div ul:contains(des meilleures ventes) > li > span.a-list-item',
 			type: 'text',
 			id: 12,
+		},
+		{
+			select: 'th:contains(los clientes) + *',
+			type: 'text',
+			id: 13,
 		},
 	],
 	is_fba: [

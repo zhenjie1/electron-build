@@ -20,7 +20,6 @@ userConfig.dev.env.is_web = IsWeb
 
 const root = resolve('src/renderer')
 
-
 function range(size, startAt = 1) {
     return Array.from(Array(size).keys()).map(i => i + startAt)
 }

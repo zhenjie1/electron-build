@@ -48,7 +48,6 @@
     "@types/node": "^16.11.8",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
-    "@unocss/preset-attributify": "^0.26.2",
     "@unocss/preset-icons": "^0.26.2",
     "@unocss/preset-typography": "^0.26.2",
     "@unocss/preset-web-fonts": "^0.26.2",

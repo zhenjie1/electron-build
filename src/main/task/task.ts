@@ -75,6 +75,7 @@ export default class Task {
 	 * 开启任务
 	 */
 	async run() {
+		this.resultCount = 0
 		this.getTaskUrl()
 		this.log({
 			log: '开启任务',
@@ -314,8 +315,10 @@ export default class Task {
 			await useIpcRenderApi('home.changeStatus', { params: [{ id: this.info.id, status }] })
 		}
 
+		// 是否是开启任务
+		const isStart = ['working', 'pending'].includes(status)
 		// 暂停后关闭浏览器
-		if (['nothing', 'paused', 'suspended'].includes(status)) {
+		if (!isStart) {
 			setTimeout(() => {
 				this.tasks.map((task) => {
 					tryCatch(() => {

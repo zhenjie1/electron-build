@@ -254,7 +254,7 @@ export async function entryPageSetAddress(page: Page, task: Task, options: { cur
 	const pageCode: string = await page.evaluate(() => {
 		const curZipCode = document
 			.querySelector<any>('#nav-belt #glow-ingress-line2')
-			.innerText.toLocaleLowerCase()
+			?.innerText?.toLocaleLowerCase()
 		return curZipCode || ''
 	})
 	let zipCode = zipCodes[info.market_site.country_code]
@@ -302,9 +302,9 @@ export async function addressDetectionClick(
 	const isSuccess = await page.evaluate(
 		([info, zipCodes]) => {
 			const el1 = document.querySelector('#nav-global-location-data-modal-action')
-			const modalStr = el1.getAttribute('data-a-modal')
-			const modal = JSON.parse(modalStr)
-			if (typeof modal !== 'object') throw new Error('无法设置地址')
+			const modalStr = el1?.getAttribute('data-a-modal')
+			const modal = modalStr ? JSON.parse(modalStr) : ''
+			if (typeof modal !== 'object') return false
 
 			return fetch(modal.url, {
 				method: 'get',
