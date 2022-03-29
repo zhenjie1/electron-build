@@ -1,0 +1,24 @@
+body{
+    --main: #ffa400;
+    --mainLight: #fcbe4e;
+    --mainDisabled: rgba(255, 179, 41, .49);
+    --mainTrans: rgba(255, 164, 0, .1);
+    // --mainTrans: rgba(24, 144, 255, .1);
+
+    --border: #e6e6e6;
+
+    --bgHover: rgba(0, 0, 0, 0.04);
+
+    --gray: #808080;
+    --red: #e33232;
+    --blue: #409EFF;
+    --yellow: #E6A23C;
+    --green: #67C23A;
+
+    .red{color: var(--red);}
+    .main{color: var(--main);}
+    .gray{color: var(--gray);}
+    .blue{color: var(--blue);}
+    .green{color: var(--green);}
+    .yellow{color: var(--yellow);}
+}

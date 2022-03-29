@@ -1,0 +1,11 @@
+
+body {
+    --el-color-primary: var(--main);
+
+    .el-button:focus, .el-button:hover{border-color: var(--main);background-color: var(--mainTrans);}
+    .el-button--primary{background-color: var(--main);border-color: var(--main);}
+    .el-button--primary:focus,.el-button--primary:hover{background-color: var(--mainLight);border-color: var(--mainLight);}
+    .el-button.is-disabled, .el-button.is-disabled:focus, .el-button.is-disabled:hover{background-color: var(--mainDisabled);border-color: var(--mainDisabled);}
+    
+    // --el-button-bg-color: var(--main) !important;
+}

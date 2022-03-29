@@ -1,0 +1,54 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "outDir": "./dist/electron/main",
+        "sourceMap": true,
+        "declaration": false,
+        "target": "es2017",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "types": [
+            "vite/client",
+            "vite-plugin-pages/client",
+            "vite-plugin-vue-layouts/client"
+        ],
+        "paths": {
+            "@config/*": [
+                "config/*"
+            ],
+            "@renderer/*": [
+                "src/renderer/*"
+            ],
+            "@main/*": [
+                "src/main/*"
+            ],
+            "@store/*": [
+                "src/renderer/store/*"
+            ]
+        },
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "customTypes/*",
+        "types/*"
+    ],
+    "exclude": [
+        "dist",
+        "build",
+        "node_modules"
+    ],
+}
